@@ -1,0 +1,96 @@
+body {
+  background-color: black;
+}
+.App {
+  margin-left: 170px;
+  margin-right: 170px;
+  color: white;
+}
+
+.header {
+  margin-top: 30px;
+  margin-bottom: 70px;
+}
+
+
+
+/*MAIN CARD DESIGN START*/
+.main-card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.name-icon-display {
+  display: inline-flex;
+}
+img {
+  width: auto;
+  height: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.total-box {
+  width: 21%;
+  background-color: #1a1442;
+  text-align: center;
+  border-radius: 5px;
+  border-top: 5px solid rgb(0, 119, 255);
+  margin-bottom: 30px;
+}
+.total-box h3 {
+  margin: 0;
+  font-size: 60px;
+}
+.total-box h2 {
+  font-size: 20px;
+  padding-left: 10px;
+}
+.total-box span {
+  letter-spacing: 4px;
+}
+.total-box p {
+  padding: 10px;
+}
+/*MAIN CARD DESIGN END*/
+
+
+
+/*SMALL BOX DESIGN START*/
+.small-box {
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.small-card {
+  width: 21%;
+  background-color: #1a1442;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.small-card h3 {
+  display: inline-flex;
+  font-size: 50px;
+  margin-top: -20px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+.small-card span {
+  display: inline-block;
+  float: right;
+  margin-right:25px;
+  font-size: 15px;
+}
+.name-icon h2 {
+  margin-top: 0px;
+  padding: 20px;
+  color: #8f8f8f;
+}
+.name-icon img {
+  position: fixed;
+  margin-left: 280px;
+  margin-top: -65px;
+}
+/*SMALL BOX DESIGN END*/
