@@ -9,6 +9,10 @@ import ytLogo from './images/icon-youtube.svg';
 import Header from './components/Header';
 
 function App() {
+
+  const [light, setLight] = useState(false);
+  const changeTheme = ()=> setLight(!light);
+
   //Main card datas
   const [data, setData] = useState([
     {
@@ -17,6 +21,7 @@ function App() {
       number: '1987',
       description: 'FOLLOWERS',
       today: '▲12 Today',
+      isGrowing:true
     },
     {
       icon: twitterLogo,
@@ -24,6 +29,7 @@ function App() {
       number: '1044',
       description: 'FOLLOWERS',
       today: '▲99 Today',
+      isGrowing:true
     },
     {
       icon: instagramLogo,
@@ -31,6 +37,7 @@ function App() {
       number: '11K',
       description: 'FOLLOWERS',
       today: '▲1099 Today',
+      isGrowing:true
     },
     {
       icon: ytLogo,
@@ -38,7 +45,8 @@ function App() {
       number: '8239',
       description: 'SUBSCRIBERS',
       today: '▼144 Today',
-    },
+      isGrowing:false
+      },
   ]);
 
   //Small card datas
@@ -49,54 +57,63 @@ function App() {
       name: 'Page Views',
       totalNumber: '87',
       percent: '▲3%',
+      isGrowing:true
     },
     {
       icon: facebookLogo,
       name: 'Likes',
       totalNumber: '52',
       percent: '▼2%',
+      isGrowing:false
     },
     {
       icon: instagramLogo,
       name: 'Likes',
       totalNumber: '5462',
       percent: '▲2257%',
+      isGrowing:true
     },
     {
       icon: instagramLogo,
       name: 'Profile Views',
       totalNumber: '52K',
       percent: '▲1375%',
+      isGrowing:true
     },
     {
       icon: twitterLogo,
       name: 'Retweets',
       totalNumber: '117',
       percent: '▲303%',
+      isGrowing:true
     },
     {
       icon: twitterLogo,
       name: 'Likes',
       totalNumber: '507',
       percent: '▲553%',
+      isGrowing:true
     },
     {
       icon: ytLogo,
       name: 'Likes',
       totalNumber: '107',
       percent: '▼19%',
+      isGrowing:false
     },
     {
       icon: ytLogo,
       name: 'Total Views',
       totalNumber: '1407',
       percent: '▼12%',
+      isGrowing:false
     },
   ]);
 
   return (
-    <div className="App">
-      <Header />
+    <div className={'theme ' + (light ? 'theme--light' : 'theme--default')}>
+    <Header changeTheme={changeTheme} light={light}/>
+    <div className='App'>
       <div className="main-card">
         {data.map((datas) => (
           <>
@@ -106,6 +123,7 @@ function App() {
               number={datas.number}
               description={datas.description}
               today={datas.today}
+              isGrowing={datas.isGrowing}
             />
           </>
         ))}
@@ -119,9 +137,11 @@ function App() {
               icon={cards.icon}
               totalNumber={cards.totalNumber}
               percent={cards.percent}
+              isGrowing={cards.isGrowing}
             />
           </>
         ))}
+      </div>
       </div>
     </div>
   );

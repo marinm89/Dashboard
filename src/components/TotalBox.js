@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css';
 
-export default function TotalBox({ icon, name, number, description, today }) {
+export default function TotalBox({ icon, name, number, description, today,isGrowing }) {
   return (
     <div className="total-box">
       <div className="name-icon-display">
@@ -10,7 +10,7 @@ export default function TotalBox({ icon, name, number, description, today }) {
       </div>
       <h3>{number}</h3>
       <span>{description}</span>
-      <p>{today}</p>
+      <p className={isGrowing ? 'green-number' : 'red-number' }>{today}</p>
     </div>
   );
 }

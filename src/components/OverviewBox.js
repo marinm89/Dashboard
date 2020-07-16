@@ -5,7 +5,7 @@ import twitterLogo from '../images/icon-twitter.svg';
 import instagramLogo from '../images/icon-instagram.svg';
 import ytLogo from '../images/icon-youtube.svg';
 
-export default function OverviewBox({ icon, name, totalNumber, percent }) {
+export default function OverviewBox({ icon, name, totalNumber, percent , isGrowing}) {
   return (
       <div className="small-card">
           <div className="name-icon">
@@ -13,7 +13,7 @@ export default function OverviewBox({ icon, name, totalNumber, percent }) {
               <img src={icon} />
           </div>
             <h3>{totalNumber}</h3>
-          <span>{percent}</span>
+          <span className={isGrowing ? 'green-number' : 'red-number' }>{percent}</span>
       </div>
   );
 }
